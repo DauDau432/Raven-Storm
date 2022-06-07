@@ -49,7 +49,7 @@ curl -s https://raw.githubusercontent.com/DauDau432/Raven-Storm/master/install.s
 ```
 
 ## Gỡ cài đặt
-
+Chỉ cần thực hiện các bước sau:
 ```
 sudo bash /usr/share/Raven-Storm/uninstall.sh
 ```
