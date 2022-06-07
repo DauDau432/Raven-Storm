@@ -29,14 +29,14 @@ _Tôi đã lưu trữ kho lưu trữ này vì tôi hiện không muốn làm vi�
 
 Tải xuống kho lưu trữ Raven-Storm
 
-[***Bấm Vào Đây Để Tải Xuống***]()
+[***Bấm Vào Đây Để Tải Xuống***](https://github.com/DauDau432/Raven-Storm/archive/refs/heads/master.zip)
+
+Giải nén file zip và di chuyển vào trong thư mục chính
 
 Cài đặt python trước sau đó tải xuống gói thư viện
 ```
 pip3 install -r requirements.txt
 ```
-Di chuyển vào trong thư mục chính
-
 Khởi động
 ```
 python3 main.py
