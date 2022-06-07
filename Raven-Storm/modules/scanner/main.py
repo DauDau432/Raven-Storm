@@ -1,9 +1,9 @@
 # 2020
-# The Raven-Storm Toolkit was programmed and developed by Taguar258.
-# The Raven-Storm Toolkit is published under the MIT Licence.
-# The Raven-Storm Toolkit is based on the CLIF-Framework.
-# The CLIF-Framework is programmed and developed by Taguar258.
-# The CLIF-Framework is published under the MIT Licence.
+# Bộ công cụ Raven-Storm được lập trình và phát triển bởi Taguar258.
+# Bộ công cụ Raven-Storm được xuất bản theo Giấy phép MIT.
+# Bộ công cụ Raven-Storm dựa trên CLIF-Framework.
+# CLIF-Framework được lập trình và phát triển bởi Taguar258.
+# CLIF-Framework được xuất bản theo Giấy phép MIT.
 
 import socket
 from os import system
@@ -17,7 +17,7 @@ from CLIF_Framework.framework import tools  # noqa: I900
 try:
 	import nmap
 except ImportError:
-	print("Please install the nmap module.")
+	print("Vui lòng cài đặt mô-đun nmap.")
 	quit()
 
 event = event()
@@ -51,44 +51,44 @@ class Main:
 		event.commands(self.run_shell, ".")
 		event.commands(self.debug, "$")
 
-		event.help_comment("|\n|-- Port scanning:")
-		event.help("ports ip", "Get port of IP (get port i).")
-		event.help("ports web", "Get port of web (get port w).")
-		event.help_comment("|\n|-- Network scanning:")
-		event.help("lan scan", "Get all Ips of Wifi.")
-		event.help_comment("|\n|-- Domain scanning:")
-		event.help("domain ip", "Get the IP by host.")
-		# event.help("post scan", "Get all post variables of a Website.")
-		event.help_comment("|\n|-- Speed testing:")
-		event.help("speed down", "Return the time it needs to open a website.")
-		event.help("speed ping", "Return the time it needs to ping an IP.")
+		event.help_comment("|\n|-- Quét cổng:")
+		event.help("ports ip", "Nhận cổng của IP (lấy cổng i).")
+		event.help("ports web", "Nhận cổng web (lấy cổng w).")
+		event.help_comment("|\n|-- Quét mạng:")
+		event.help("lan scan", "Nhận tất cả các Ips của Wi-Fi.")
+		event.help_comment("|\n|-- Quét miền:")
+		event.help("domain ip", "Nhận IP theo máy chủ.")
+		event.help("post scan", "Nhận tất cả các biến bài đăng của một Trang web.")
+		event.help_comment("|\n|-- Kiểm tra tốc độ:")
+		event.help("speed down", "Trả lại thời gian cần thiết để mở một trang web.")
+		event.help("speed ping", "Trả lại thời gian cần thiết để ping một IP.")
 
 	def banner(self):
 		system("clear || cls")
 		print(("""C_B----------------------------------------------------------C_W
-THE CREATOR DOES NOT TAKE ANY RESPONSIBILITY FOR DAMAGE CAUSED.
-THE USER ALONE IS RESPONSIBLE, BE IT: ABUSING RAVEN-STORM
-TO FIT ILLEGAL PURPOSES OR ACCIDENTAL DAMAGE CAUSED BY RAVEN-STORM.
-BY USING THIS SOFTWARE, YOU MUST AGREE TO TAKE FULL RESPONSIBILITY
-FOR ANY DAMAGE CAUSED BY RAVEN-STORM.
-EVERY ATTACK WILL CAUSE TEMPORARY DAMAGE, BUT LONG-TERM DAMAGE IS
-DEFFINITIFLY POSSIBLE.
-RAVEN-STORM SHOULD NOT SUGGEST PEOPLE TO PERFORM ILLEGAL ACTIVITIES.
+NGƯỜI SÁNG TẠO KHÔNG CHỊU BẤT CỨ TRÁCH NHIỆM NÀO VỀ THIỆT HẠI GÂY RA.
+NGƯỜI DÙNG CŨNG PHẢI CHỊU TRÁCH NHIỆM
+ĐỂ PHÙ HỢP VỚI CÁC MỤC ĐÍCH BẤT HỢP PHÁP HOẶC THIỆT HẠI TAI NẠN DO BÃO RAVEN gây ra.
+BẰNG CÁCH SỬ DỤNG PHẦN MỀM NÀY, BẠN PHẢI ĐỒNG Ý CHỊU TRÁCH NHIỆM ĐẦY ĐỦ
+ĐỐI VỚI BẤT KỲ THIỆT HẠI NÀO DO RAVEN-STORM gây ra.
+MỌI Đòn tấn công SẼ gây ra THIỆT HẠI TẠM THỜI NHƯNG THIỆT HẠI DÀI HẠN LÀ
+CÓ KHẢ NĂNG ĐÚNG CÁCH.
+RAVEN-STORM KHÔNG NÊN ĐỀ XUẤT NHỮNG NGƯỜI THỰC HIỆN CÁC HOẠT ĐỘNG BẤT HỢP PHÁP.
 C_B----------------------------------------------------------C_W""").replace("C_W", var.C_None).replace("C_B", var.C_Bold))
 		self.help()
 
 	def exit_console(self):
-		print("\033[1;32;0mHave a nice day.")
+		print("\033[1;32;0mChúc một ngày tốt lành.")
 		quit()
 
 	def run_shell(self, command):
 		print("")
-		system(tools.arg("Enter shell command: \033[1;32;0m", ". ", command))
+		system(tools.arg("Nhập lệnh shell: \033[1;32;0m", ". ", command))
 		print("")
 
 	def debug(self, command):
 		print("")
-		eval(tools.arg("Enter debug command: \033[1;32;0m", "$ ", command))
+		eval(tools.arg("Nhập lệnh gỡ lỗi: \033[1;32;0m", "$ ", command))
 		print("")
 
 	@event.command
@@ -102,11 +102,11 @@ C_B----------------------------------------------------------C_W""").replace("C_
 			var.nmapinstalled = True
 		except Exception as e:
 			system("clear || cls")
-			print("Please install the nmap package.")
-			print("Some functions will not work without it.")
+			print("Vui lòng cài đặt gói nmap.")
+			print("Một số chức năng sẽ không hoạt động nếu không có nó.")
 			print(e)
 			try:
-				input("[Press enter to continue without nmap]")  # noqa: S322
+				input("[Nhấn enter để tiếp tục mà không có nmap]")  # noqa: S322
 			except Exception:
 				quit()
 		self.banner()
@@ -114,7 +114,7 @@ C_B----------------------------------------------------------C_W""").replace("C_
 	@event.event
 	def on_command_not_found(command):
 		print("")
-		print("The command you entered does not exist.")
+		print("Lệnh bạn đã nhập không tồn tại.")
 		print("")
 
 	def check_session(self):
@@ -155,7 +155,7 @@ C_B----------------------------------------------------------C_W""").replace("C_
 			status = requests.post((var.server[2] + "set/com"), data={"password": var.server[3], "data": command}).text
 			if status != "200":
 				print("")
-				print("An error occured, while sending commands to the server.")
+				print("Đã xảy ra lỗi khi gửi lệnh tới máy chủ.")
 				print("")
 
 	def help(self):
@@ -172,7 +172,7 @@ C_B----------------------------------------------------------C_W""").replace("C_
 					print("Port: %s" % str(p))
 					sock.close()
 		except Exception as e:
-			print("There was an error while executing.", e)
+			print("Đã xảy ra lỗi khi thực thi.", e)
 
 	def lanscan(self):
 		try:
@@ -186,7 +186,7 @@ C_B----------------------------------------------------------C_W""").replace("C_
 			for lanscandevice in lanscandev:
 				print("%s  %s  %s  %s" % (lanscandevice[0], lanscandevice[1], lanscandevice[2], lanscandevice[3]))
 		except Exception as e:
-			print("There was an error while executing.", e)
+			print("Đã xảy ra lỗi khi thực thi.", e)
 
 	def hbi(self, ip):
 		return socket.gethostbyname(ip)
@@ -195,7 +195,7 @@ C_B----------------------------------------------------------C_W""").replace("C_
 		try:
 			if "http" not in url or "://" not in url:
 				url = ("https://%s" % url)
-			print("Testing download speed...")
+			print("Đang kiểm tra tốc độ tải xuống ...")
 			start = time()
 			http = urllib3.PoolManager()
 			response = http.request('GET', url)
@@ -204,18 +204,18 @@ C_B----------------------------------------------------------C_W""").replace("C_
 			result = (end - start)
 			return result
 		except Exception as e:
-			print("There was an error while executing.", e)
+			print("Đã xảy ra lỗi khi thực thi.", e)
 
 	def speedping(self, ip):
 		try:
-			print("Testing ping speed... (May require sudo)")
+			print("Đang kiểm tra tốc độ ping ... (Có thể yêu cầu sudo)")
 			start = time()
 			system("ping -c 1 %s > /dev/null" % ip)
 			end = time()
 			result = (end - start)
 			return result
 		except Exception as e:
-			print("There was an error while executing.", e)
+			print("Đã xảy ra lỗi khi thực thi.", e)
 
 	@event.command
 	def domain_ip(command):
@@ -224,7 +224,7 @@ C_B----------------------------------------------------------C_W""").replace("C_
 			zw = (tools.arg("Domain: ", "domain ip ", command).replace("https://", "").replace("http://", ""))
 			print(self.hbi(zw))
 		except Exception as e:
-			print("There was an error while executing.", e)
+			print("Đã xảy ra lỗi khi thực thi.", e)
 		print("")
 
 	@event.command
@@ -233,7 +233,7 @@ C_B----------------------------------------------------------C_W""").replace("C_
 		if var.nmapinstalled:
 			self.lanscan()
 		else:
-			print("Please install nmap.")
+			print("Vui lòng cài đặt nmap.")
 		print("")
 
 	@event.command
@@ -243,7 +243,7 @@ C_B----------------------------------------------------------C_W""").replace("C_
 			psi = tools.arg("IP: ", "ports ip ", command)
 			self.portscan(psi)
 		except Exception as e:
-			print("There was an error while executing.", e)
+			print("Đã xảy ra lỗi khi thực thi.", e)
 		print("")
 
 	@event.command
@@ -254,21 +254,21 @@ C_B----------------------------------------------------------C_W""").replace("C_
 			psww = socket.gethostbyname(psw.replace("https://", "").replace("http://", ""))
 			self.portscan(psww)
 		except Exception as e:
-			print("There was an error while executing.", e)
+			print("Đã xảy ra lỗi khi thực thi.", e)
 		print("")
 
 	@event.command
 	def speed_down(command):
 		print("")
 		zw = self.speedtest(tools.arg("Website: ", "speed down ", command))
-		print("Result: %s seconds" % zw)
+		print("Kết quả: %s giây" % zw)
 		print("")
 
 	@event.command
 	def speed_ping(command):
 		print("")
 		zw = self.speedping(tools.arg("IP: ", "speed ping ", command))
-		print("Result: %s seconds" % zw)
+		print("Kết quả: %s giây" % zw)
 		print("")
 
 
