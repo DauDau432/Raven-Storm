@@ -43,7 +43,11 @@ python3 main.py
 ```
 **Trên Linux**
 
-Chỉ cần nhập dòng sau để cài đặt Raven-Storm trên Linux.
+Chỉ cần nhập 2 dòng sau để cài đặt Raven-Storm trên Linux.
+```
+curl -s https://raw.githubusercontent.com/DauDau432/Raven-Storm/master/install.sh | sudo bash -s
+```
+Sau đó
 ```
 curl -s https://raw.githubusercontent.com/DauDau432/Raven-Storm/master/install_to_bin.sh | sudo bash -s
 ```
